@@ -5,12 +5,12 @@ import Layout from "../layouts/main.astro";
 
 const { content, frontmatter } = Astro.props;
 
-const now = new Date();
+// const now = new Date();
 
-const daysDifference = Math.floor(
-	(now.getTime() - new Date(frontmatter.date).getTime()) /
-		(1000 * 60 * 60 * 24),
-);
+// const daysDifference = Math.floor(
+// 	(now.getTime() - new Date(frontmatter.date).getTime()) /
+// 		(1000 * 60 * 60 * 24),
+// );
 
 const dateString = format(new Date(frontmatter.date), "do LLLL, yyyy");
 const b = format(new Date(frontmatter.date), "do LLLL, yyyy");
@@ -24,7 +24,7 @@ const a = {
 		<h1 class="text-xl font-bold">
 			{frontmatter.photo ? frontmatter.title : dateString}
 		</h1>
-		<span class="text-sm text-gray-500"> ({daysDifference} days ago)</span>
+		<!-- <span class="text-sm text-gray-500"> ({daysDifference} days ago)</span> -->
 		<slot />
 	</div>
 </Layout>
