@@ -3,7 +3,8 @@ import { format } from "date-fns";
 
 const posts = await Astro.glob("../pages/*.md");
 const { pathname } = Astro.url;
-
+console.log('pathname:', pathname);
+console.log('post url:', posts[0].url)
 const filteredPosts = posts.filter((post) => post.frontmatter.published === true);
 
 filteredPosts.sort((a, b) => {
